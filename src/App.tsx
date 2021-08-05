@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { lazy, useState } from 'react'
 import { Redirect, Route, Router, Switch } from 'react-router-dom'
 import { ResetCSS } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
@@ -24,6 +24,7 @@ import {
 } from './views/AddLiquidity/redirects'
 import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/redirects'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
+import { useMatchBreakpoints } from './UiKit'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -46,7 +47,7 @@ const AddLiquidity = lazy(() => import('./views/AddLiquidity'))
 const Liquidity = lazy(() => import('./views/Pool'))
 const PoolFinder = lazy(() => import('./views/PoolFinder'))
 const RemoveLiquidity = lazy(() => import('./views/RemoveLiquidity'))
-const PancakeInfo = lazy(() => import('./PancakeInfo'))
+const PancakeInfo = lazy(() => import('./components/PancakeInfoIframes/PancakeInfo'))
 
 // This config is required for number formatting
 BigNumber.config({
@@ -59,12 +60,16 @@ const App: React.FC = () => {
   useEagerConnect()
   useFetchProfile()
   usePollCoreFarmData()
-
+  const { isXl } = useMatchBreakpoints();
+  const isMobile = isXl === false;
+  const [isPushed, setIsPushed] = useState(!isMobile);
   return (
     <Router history={history}>
       <ResetCSS/>
       <GlobalStyle/>
-      <Menu>
+      <Menu isPushed={isPushed}
+            setIsPushed={setIsPushed}
+            isMobile={isMobile}>
         <SuspenseWithChunkError fallback={<PageLoader/>}>
           <Switch>
             <Route path="/" exact>
@@ -129,7 +134,7 @@ const App: React.FC = () => {
             <Route exact path="/create/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds}/>
             <Route exact strict path="/remove/:tokens" component={RedirectOldRemoveLiquidityPathStructure}/>
             <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity}/>
-            <Route path="/info" component={PancakeInfo}/>
+            <Route path="/info" render={() => <PancakeInfo isPushed={isPushed} />}/>
 
             {/* Redirect */}
             <Route path="/pool">

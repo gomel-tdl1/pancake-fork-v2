@@ -1,20 +1,20 @@
 import { createReducer } from '@reduxjs/toolkit'
-import { INITIAL_ALLOWED_SLIPPAGE, DEFAULT_DEADLINE_FROM_NOW } from '../../config/constants'
+import { DEFAULT_DEADLINE_FROM_NOW, INITIAL_ALLOWED_SLIPPAGE } from '../../config/constants'
 import { updateVersion } from '../global/actions'
 import {
   addSerializedPair,
   addSerializedToken,
+  muteAudio,
   removeSerializedPair,
   removeSerializedToken,
   SerializedPair,
   SerializedToken,
-  updateUserExpertMode,
-  updateUserSlippageTolerance,
-  updateUserDeadline,
-  updateUserSingleHopOnly,
-  muteAudio,
-  unmuteAudio,
   toggleTheme,
+  unmuteAudio,
+  updateUserDeadline,
+  updateUserExpertMode,
+  updateUserSingleHopOnly,
+  updateUserSlippageTolerance,
 } from './actions'
 
 const currentTimestamp = () => new Date().getTime()
@@ -143,5 +143,5 @@ export default createReducer(initialState, (builder) =>
     })
     .addCase(toggleTheme, (state) => {
       state.isDark = !state.isDark
-    }),
+    })
 )
