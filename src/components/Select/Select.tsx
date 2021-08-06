@@ -16,8 +16,8 @@ const DropDownHeader = styled.div`
   transition: border-radius 0.15s;
 `
 
-const DropDownListContainer = styled.div`
-  min-width: 136px;
+const DropDownListContainer = styled.div<{ minWidth?: number }>`
+  min-width: ${({minWidth}) => minWidth || 136}px;
   height: 0;
   position: absolute;
   overflow: hidden;
@@ -30,22 +30,22 @@ const DropDownListContainer = styled.div`
   width: 100%;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
+    min-width: ${({minWidth}) => minWidth || 168}px;
   }
 `
 
-const DropDownContainer = styled.div<{ isOpen: boolean; width: number; height: number }>`
+const DropDownContainer = styled.div<{ isOpen: boolean; width: number; height: number, minWidth?: number }>`
   cursor: pointer;
-  width: ${({ width }) => width}px;
+  width: ${({ width, minWidth }) => minWidth || width}px;
   position: relative;
   background: ${({ theme }) => theme.colors.input};
   border-radius: 16px;
   height: 40px;
-  min-width: 136px;
+  min-width: ${({minWidth}) => minWidth || 136}px;
   user-select: none;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    min-width: 168px;
+    min-width: ${({minWidth}) => minWidth || 168}px;
   }
 
   ${(props) =>
@@ -93,7 +93,8 @@ const ListItem = styled.li`
 
 export interface SelectProps {
   options: OptionProps[]
-  onChange?: (option: OptionProps) => void
+  onChange?: (option: OptionProps) => void,
+  minWidth?: number
 }
 
 export interface OptionProps {
@@ -101,7 +102,7 @@ export interface OptionProps {
   value: any
 }
 
-const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => {
+const Select: React.FunctionComponent<SelectProps> = ({ options, onChange , minWidth}) => {
   const containerRef = useRef(null)
   const dropdownRef = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
@@ -139,14 +140,14 @@ const Select: React.FunctionComponent<SelectProps> = ({ options, onChange }) => 
   }, [])
 
   return (
-    <DropDownContainer isOpen={isOpen} ref={containerRef} {...containerSize}>
+    <DropDownContainer isOpen={isOpen} ref={containerRef} {...containerSize} minWidth={minWidth}>
       {containerSize.width !== 0 && (
         <DropDownHeader onClick={toggling}>
           <Text>{options[selectedOptionIndex].label}</Text>
         </DropDownHeader>
       )}
       <ArrowDropDownIcon color="text" onClick={toggling} />
-      <DropDownListContainer>
+      <DropDownListContainer minWidth={minWidth}>
         <DropDownList ref={dropdownRef}>
           {options.map((option, index) =>
             index !== selectedOptionIndex ? (

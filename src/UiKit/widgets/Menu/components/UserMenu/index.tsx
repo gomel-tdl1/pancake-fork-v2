@@ -7,6 +7,7 @@ import isTouchDevice from "../../../../util/isTouchDevice";
 import { UserMenuProps, variants } from "./types";
 import MenuIcon from "./MenuIcon";
 import { UserMenuItem } from "./styles";
+import SwitchNetwork from './SwitchNet/SwitchNetwork'
 
 const StyledUserMenu = styled(Flex)`
   align-items: center;
@@ -62,6 +63,12 @@ const Menu = styled.div<{ isOpen: boolean }>`
   ${UserMenuItem}:last-child {
     border-radius: 0 0 8px 8px;
   }
+`;
+
+const MenuWithSwitch = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px
 `;
 
 const UserMenu: React.FC<UserMenuProps> = ({
@@ -157,11 +164,15 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   return (
     <>
-      <StyledUserMenu ref={setTargetRef} {...props}>
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
-        <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
-        <ChevronDownIcon color="text" width="24px" />
-      </StyledUserMenu>
+      <MenuWithSwitch>
+        <SwitchNetwork />
+        <StyledUserMenu ref={setTargetRef} {...props}>
+          <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+          <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
+          <ChevronDownIcon color="text" width="24px" />
+        </StyledUserMenu>
+      </MenuWithSwitch>
+
       <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
         {children}
       </Menu>

@@ -4,7 +4,6 @@ import {
   Flex,
   LogoutIcon,
   useModal,
-  UserMenu as UIKitUserMenu,
   UserMenuDivider,
   UserMenuItem,
 } from '@pancakeswap/uikit'
@@ -13,6 +12,7 @@ import { useProfile } from 'state/profile/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
 import { useTranslation } from 'contexts/Localization'
+import UIKitUserMenu from '../../../UiKit/widgets/Menu/components/UserMenu/index'
 import WalletModal, { WalletView, LOW_BNB_BALANCE } from './WalletModal'
 import ProfileUserMenuItem from './ProfileUserMenutItem'
 import WalletUserMenuItem from './WalletUserMenuItem'

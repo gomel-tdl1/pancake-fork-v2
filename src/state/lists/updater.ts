@@ -14,6 +14,7 @@ import { useActiveListUrls } from './hooks'
 
 export default function Updater(): null {
   const { library } = useWeb3Provider()
+  console.log(library)
   const dispatch = useDispatch<AppDispatch>()
   const isWindowVisible = useIsWindowVisible()
 

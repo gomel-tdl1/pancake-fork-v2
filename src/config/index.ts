@@ -1,6 +1,6 @@
-import { ChainId } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js/bignumber'
 import { BIG_TEN } from 'utils/bigNumber'
+import { ChainId } from './constants/netConst'
 
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -10,8 +10,8 @@ BigNumber.config({
 export const BSC_BLOCK_TIME = 3
 
 export const BASE_BSC_SCAN_URLS = {
-  [ChainId.MAINNET]: 'https://bscscan.com',
-  [ChainId.TESTNET]: 'https://testnet.bscscan.com',
+  [ChainId.MAINNET]: 'https://etherscan.io/',
+  [ChainId.TESTNET]: 'https://bscscan.com',
 }
 
 // CAKE_PER_BLOCK details
