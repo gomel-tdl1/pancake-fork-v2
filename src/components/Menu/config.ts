@@ -64,6 +64,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     icon: 'InfoIcon',
     href: '/info',
   },
+  {
+    label: t('LightPaper'),
+    icon: 'FlashIcon',
+    href: '/',
+  },
   // {
   //   label: t('More'),
   //   icon: 'MoreIcon',

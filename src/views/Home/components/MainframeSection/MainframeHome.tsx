@@ -22,6 +22,9 @@ const ImageSection = styled.div`
   }
   h2{
     font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px #98FBF6;
   }
 `
 const CardsSection = styled.div`
@@ -56,7 +59,7 @@ const cardsData = [
     description: 'Vote on platform updates, change & rules',
     info: '3. Claim ZBD Rewards',
     buttonText: 'Claim',
-    href: ''
+    href: '/pools'
   }
 ]
 

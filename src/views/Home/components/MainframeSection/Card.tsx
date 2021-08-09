@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 const MainWrapper = styled.div`
   display: flex;
@@ -33,13 +33,15 @@ const TitleDescriptionSection = styled.div`
     min-height: 160px;
   }
   color: #98FBF6;
-  font-weight: 100;
+  font-weight: 400;
   .title{
+    font-family: 'Roboto', sans-serif;
     font-size: 34px;
     word-spacing: 5px;
     letter-spacing: 2px;
   }
   .desc{
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     width: 200px;
     word-spacing: 2px;
@@ -60,30 +62,30 @@ const ButtonHome = styled(NavLink)`
 `
 
 type PropsType = {
-  title: string,
-  description: string,
-  info: string,
-  buttonText: string,
-  href: string
+    title: string,
+    description: string,
+    info: string,
+    buttonText: string,
+    href: string
 }
 const CardMainframe: React.FC<PropsType> = ({
-                                              title,
-                                              description,
-                                              info,
-                                              buttonText,
-                                              href,
+                                                title,
+                                                description,
+                                                info,
+                                                buttonText,
+                                                href,
                                             }) => {
 
-  return (
-    <MainWrapper>
-      <TitleDescriptionSection>
-        <div className='title'>{title}</div>
-        <div className='desc'>{description}</div>
-      </TitleDescriptionSection>
-      <div className='info'>{info}</div>
-      <ButtonHome to={href}>{buttonText}</ButtonHome>
-    </MainWrapper>
-  )
+    return (
+        <MainWrapper>
+            <TitleDescriptionSection>
+                <div className='title'>{title}</div>
+                <div className='desc'>{description}</div>
+            </TitleDescriptionSection>
+            <div className='info'>{info}</div>
+            <ButtonHome to={href}>{buttonText}</ButtonHome>
+        </MainWrapper>
+    )
 }
 
 export default CardMainframe

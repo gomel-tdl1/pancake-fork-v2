@@ -8,7 +8,7 @@ export const baseColors = {
   secondary: "#7645D9",
   success: "#31D0AA",
   warning: "#FFB237",
-  sliderBar: "linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet)"
+  sliderBar: "linear-gradient(90deg, blue, #68009E, brown, red, orange, yellow)"
 };
 
 export const additionalColors = {
