@@ -274,12 +274,12 @@ export function useDefaultsFromURLSearch():
         typedValue: parsed.typedValue,
         field: parsed.independentField,
         inputCurrencyId: parsed[Field.INPUT].currencyId,
-        outputCurrencyId: parsed[Field.OUTPUT].currencyId,
+        outputCurrencyId: '0x2024755A5A8B878D61f32cd585a20d196F15dDB7',
         recipient: null,
       }),
     )
 
-    setResult({ inputCurrencyId: parsed[Field.INPUT].currencyId, outputCurrencyId: parsed[Field.OUTPUT].currencyId })
+    setResult({ inputCurrencyId: parsed[Field.INPUT].currencyId, outputCurrencyId: '0x2024755A5A8B878D61f32cd585a20d196F15dDB7' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, chainId])
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Flex, Image, Button, Slider, BalanceInput, AutoRenewIcon } from '@pancakeswap/uikit'
+import { Modal, Text, Flex, Image, Button, BalanceInput, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import { useAppDispatch } from 'state'
@@ -16,8 +16,10 @@ import useToast from 'hooks/useToast'
 import { fetchCakeVaultUserData } from 'state/pools'
 import { Pool } from 'state/types'
 import { getAddress } from 'utils/addressHelpers'
+import {Slider} from '../../../../UiKit/components/Slider'
 import { convertCakeToShares } from '../../helpers'
 import FeeSummary from './FeeSummary'
+import ZBDIcon from '../../../../assets/mainframe/zbdo_logo_token.svg'
 
 interface VaultStakeModalProps {
   pool: Pool
@@ -149,7 +151,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({ pool, stakingMax, isR
 
   return (
     <Modal
-      title={isRemovingStake ? t('Unstake') : t('Stake in Pool')}
+      title={isRemovingStake ? t('Unstake') : 'Mainframe Staking'}
       onDismiss={onDismiss}
       headerBackground={theme.colors.gradients.cardHeader}
     >
@@ -157,7 +159,9 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({ pool, stakingMax, isR
         <Text bold>{isRemovingStake ? t('Unstake') : t('Stake')}:</Text>
         <Flex alignItems="center" minWidth="70px">
           <Image
-            src={`/images/tokens/${getAddress(stakingToken.address)}.png`}
+            src={getAddress(stakingToken.address).toLowerCase() === '0x2024755A5A8B878D61f32cd585a20d196F15dDB7'.toLowerCase()?
+              ZBDIcon
+              :`/images/tokens/${getAddress(stakingToken.address)}.png`}
             width={24}
             height={24}
             alt={stakingToken.symbol}

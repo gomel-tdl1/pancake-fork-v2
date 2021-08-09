@@ -3,12 +3,12 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@pancakeswap/uikit'
+import { Flex, Heading, Text } from '@pancakeswap/uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
 import usePersistState from 'hooks/usePersistState'
-import { useFetchPublicPoolsData, usePools, useFetchCakeVault, useCakeVault } from 'state/pools/hooks'
+import { useCakeVault, useFetchCakeVault, useFetchPublicPoolsData, usePools } from 'state/pools/hooks'
 import { usePollFarmsData } from 'state/farms/hooks'
 import { latinise } from 'utils/latinise'
 import FlexLayout from 'components/Layout/Flex'
@@ -26,6 +26,7 @@ import HelpButton from './components/HelpButton'
 import PoolsTable from './components/PoolsTable/PoolsTable'
 import { ViewMode } from './components/ToggleView/ToggleView'
 import { getAprData, getCakeVaultEarnings } from './helpers'
+import BGLogo from '../../assets/mainframe/Zbdo_Mainframe_Staking.png'
 
 const CardLayout = styled(FlexLayout)`
   justify-content: center;
@@ -71,6 +72,10 @@ const ControlStretch = styled(Flex)`
   > div {
     flex: 1;
   }
+`
+const StakingWrapper = styled.div`
+  z-index: 5;
+  background: url(${BGLogo}) fixed center;
 `
 
 const NUMBER_OF_POOLS_VISIBLE = 12
@@ -182,12 +187,12 @@ const Pools: React.FC = () => {
             }
             return pool.isAutoVault
               ? getCakeVaultEarnings(
-                  account,
-                  cakeAtLastUserAction,
-                  userShares,
-                  pricePerFullShare,
-                  pool.earningTokenPrice,
-                ).autoUsdToDisplay
+                account,
+                cakeAtLastUserAction,
+                userShares,
+                pricePerFullShare,
+                pool.earningTokenPrice,
+              ).autoUsdToDisplay
               : pool.userData.pendingReward.times(pool.earningTokenPrice).toNumber()
           },
           'desc',
@@ -224,7 +229,7 @@ const Pools: React.FC = () => {
     <CardLayout>
       {chosenPools.map((pool) =>
         pool.isAutoVault ? (
-          <CakeVaultCard key="auto-cake" pool={pool} showStakedOnly={stakedOnly} />
+          <CakeVaultCard key='auto-cake' pool={pool} showStakedOnly={stakedOnly} />
         ) : (
           <PoolCard key={pool.sousId} pool={pool} account={account} />
         ),
@@ -235,21 +240,21 @@ const Pools: React.FC = () => {
   const tableLayout = <PoolsTable pools={chosenPools} account={account} userDataLoaded={userDataLoaded} />
 
   return (
-    <>
+    <StakingWrapper>
       <PageHeader>
-        <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
-          <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('Syrup Pools')}
+        <Flex justifyContent='space-between' flexDirection={['column', null, null, 'row']}>
+          <Flex flex='1' flexDirection='column' mr={['8px', 0]}>
+            <Heading as='h1' scale='xxl' color='secondary' mb='24px'>
+              {t('Mainframe Staking')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale='md' color='text'>
               {t('Just stake some tokens to earn.')}
             </Heading>
-            <Heading scale="md" color="text">
+            <Heading scale='md' color='text'>
               {t('High APR, low risk.')}
             </Heading>
           </Flex>
-          <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
+          <Flex flex='1' height='fit-content' justifyContent='center' alignItems='center' mt={['24px', null, '0']}>
             <HelpButton />
             <BountyCard />
           </Flex>
@@ -266,7 +271,7 @@ const Pools: React.FC = () => {
           />
           <FilterContainer>
             <LabelWrapper>
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize='12px' bold color='textSubtle' textTransform='uppercase'>
                 {t('Sort by')}
               </Text>
               <ControlStretch>
@@ -294,35 +299,27 @@ const Pools: React.FC = () => {
               </ControlStretch>
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize='12px' bold color='textSubtle' textTransform='uppercase'>
                 {t('Search')}
               </Text>
-              <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
+              <SearchInput onChange={handleChangeSearchQuery} placeholder='Search Pools' />
             </LabelWrapper>
           </FilterContainer>
         </PoolControls>
         {showFinishedPools && (
-          <Text fontSize="20px" color="failure" pb="32px">
+          <Text fontSize='20px' color='failure' pb='32px'>
             {t('These pools are no longer distributing rewards. Please unstake your tokens.')}
           </Text>
         )}
         {account && !userDataLoaded && stakedOnly && (
-          <Flex justifyContent="center" mb="4px">
+          <Flex justifyContent='center' mb='4px'>
             <Loading />
           </Flex>
         )}
         {viewMode === ViewMode.CARD ? cardLayout : tableLayout}
         <div ref={loadMoreRef} />
-        <Image
-          mx="auto"
-          mt="12px"
-          src="/images/decorations/3d-syrup-bunnies.png"
-          alt="Pancake illustration"
-          width={192}
-          height={184.5}
-        />
       </Page>
-    </>
+    </StakingWrapper>
   )
 }
 

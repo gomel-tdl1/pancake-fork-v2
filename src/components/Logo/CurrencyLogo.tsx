@@ -28,8 +28,10 @@ export default function CurrencyLogo({
 
     if (currency instanceof Token) {
       if (currency instanceof WrappedTokenInfo) {
+        if (currency.address.toLowerCase() === '0x2024755A5A8B878D61f32cd585a20d196F15dDB7'.toLowerCase()) return [...uriLocations, 'https://i.ibb.co/C1RxxFw/zbdo-logo-token.png']
         return [...uriLocations, getTokenLogoURL(currency.address)]
       }
+      if (currency.address.toLowerCase() === '0x2024755A5A8B878D61f32cd585a20d196F15dDB7'.toLowerCase()) return ['https://i.ibb.co/C1RxxFw/zbdo-logo-token.png']
       return [getTokenLogoURL(currency.address)]
     }
     return []

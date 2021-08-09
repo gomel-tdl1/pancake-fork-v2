@@ -32,7 +32,7 @@ const SwitchNetwork: FC = () => {
     }
   }
   return (
-    <div>
+    <div style={{display: 'none'}}>
       <Select options={networks} onChange={handleSelect} minWidth={110} />
     </div>
   )

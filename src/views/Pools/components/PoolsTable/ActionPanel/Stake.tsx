@@ -248,7 +248,8 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
       <ActionContent>
         <Button
           width="100%"
-          onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
+          // onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
+          onClick={onStake}
           variant="secondary"
           disabled={isFinished}
         >

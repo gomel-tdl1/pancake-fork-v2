@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Flex, Image, Button, Slider, BalanceInput, AutoRenewIcon, Link } from '@pancakeswap/uikit'
+import { Modal, Text, Flex, Image, Button, BalanceInput, AutoRenewIcon, Link } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
@@ -8,9 +8,11 @@ import BigNumber from 'bignumber.js'
 import { getFullDisplayBalance, formatNumber, getDecimalAmount } from 'utils/formatBalance'
 import { Pool } from 'state/types'
 import { getAddress } from 'utils/addressHelpers'
+import {Slider} from '../../../../../UiKit/components/Slider'
 import PercentageButton from './PercentageButton'
 import useStakePool from '../../../hooks/useStakePool'
 import useUnstakePool from '../../../hooks/useUnstakePool'
+import ZBDIcon from '../../../../../assets/mainframe/zbdo_logo_token.svg'
 
 interface StakeModalProps {
   isBnbPool: boolean
@@ -121,7 +123,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
 
   return (
     <Modal
-      title={isRemovingStake ? t('Unstake') : t('Stake in Pool')}
+      title={isRemovingStake ? t('Unstake') : t('Mainframe Staking')}
       onDismiss={onDismiss}
       headerBackground={theme.colors.gradients.cardHeader}
     >
@@ -137,7 +139,9 @@ const StakeModal: React.FC<StakeModalProps> = ({
         <Text bold>{isRemovingStake ? t('Unstake') : t('Stake')}:</Text>
         <Flex alignItems="center" minWidth="70px">
           <Image
-            src={`/images/tokens/${getAddress(stakingToken.address)}.png`}
+            src={getAddress(stakingToken.address).toLowerCase() === '0x2024755A5A8B878D61f32cd585a20d196F15dDB7'.toLowerCase()?
+              ZBDIcon
+              :`/images/tokens/${getAddress(stakingToken.address)}.png`}
             width={24}
             height={24}
             alt={stakingToken.symbol}

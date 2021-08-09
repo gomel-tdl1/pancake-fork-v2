@@ -1,9 +1,8 @@
 import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 import Text from "../Text/Text";
-import bunnyHeadMain from "./svg/bunnyhead-main.svg";
-import bunnyHeadMax from "./svg/bunnyhead-max.svg";
-import bunnyButt from "./svg/bunnybutt.svg";
+import bunnyHeadMain from "../../../assets/mainframe/zbdo_logo_token.svg";
+import bunnyButt from "../../../assets/mainframe/SliderStart.png";
 
 interface SliderLabelProps {
   progress: string;
@@ -23,14 +22,14 @@ const getCursorStyle = ({ disabled = false }: DisabledProp) => {
 
 const getBaseThumbStyles = ({ isMax, disabled }: StyledInputProps) => `
   -webkit-appearance: none;
-  background-image: url(${isMax ? bunnyHeadMax : bunnyHeadMain});
+  background: url(${bunnyHeadMain});
   background-color: transparent;
+  background-size: cover;
   border: 0;
   cursor: ${getCursorStyle};
-  width: 24px;
+  width: 32px;
   height: 32px;
   filter: ${disabled ? "grayscale(100%)" : "none"};
-  transform: translate(-2px, -2px);
   transition: 200ms transform;
 
   &:hover {
@@ -55,11 +54,13 @@ export const SliderLabel = styled(Text)<SliderLabelProps>`
 `;
 
 export const BunnyButt = styled.div<DisabledProp>`
-  background: url(${bunnyButt}) no-repeat;
-  height: 32px;
+  background: url(${bunnyButt}) no-repeat center;
+  height: 20px;
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
   position: absolute;
-  width: 15px;
+  left: 6px;
+  top: 10px;
+  width: 10px;
 `;
 
 export const BunnySlider = styled.div`
@@ -95,9 +96,9 @@ export const BarBackground = styled.div<DisabledProp>`
 `;
 
 export const BarProgress = styled.div<DisabledProp>`
-  background-color: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) => theme.colors.sliderBar};
   filter: ${({ disabled }) => (disabled ? "grayscale(100%)" : "none")};
-  height: 10px;
+  height: 5px;
   position: absolute;
   top: 18px;
 `;

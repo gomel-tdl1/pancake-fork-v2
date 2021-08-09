@@ -38,6 +38,7 @@ export type Gradients = {
 };
 
 export type Colors = {
+  sliderBar: string;
   primary: string;
   primaryBright: string;
   primaryDark: string;
@@ -60,6 +61,7 @@ export type Colors = {
   textDisabled: string;
   textSubtle: string;
   disabled: string;
+  pancakeBG: string;
 
   // Gradients
   gradients: Gradients;

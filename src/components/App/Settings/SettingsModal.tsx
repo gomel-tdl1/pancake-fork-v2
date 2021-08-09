@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Text, PancakeToggle, Flex, Message, Modal, ModalBody, InjectedModalProps } from '@pancakeswap/uikit'
+import { Button, Text, Flex, Message, Modal, ModalBody, InjectedModalProps } from '@pancakeswap/uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,
@@ -10,6 +10,7 @@ import {
 import { useTranslation } from 'contexts/Localization'
 
 import { useSwapActionHandlers } from 'state/swap/hooks'
+import {PancakeToggle} from '../../../UiKit/components/PancakeToggle'
 import { AutoColumn } from '../../Layout/Column'
 import QuestionHelper from '../../QuestionHelper'
 import { RowBetween, RowFixed } from '../../Layout/Row'
