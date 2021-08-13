@@ -64,6 +64,15 @@ const tokens = {
     symbol: 'BNB',
     projectLink: 'https://www.binance.com/',
   },
+  zbdo: {
+    symbol: 'ZBDO',
+    address: {
+      56: '0x2024755a5a8b878d61f32cd585a20d196f15ddb7',
+      97: '',
+    },
+    decimals: 18,
+    projectLink: '',
+  },
   cake: {
     symbol: 'CAKE',
     address: {

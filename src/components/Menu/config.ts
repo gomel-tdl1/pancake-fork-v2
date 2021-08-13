@@ -67,7 +67,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('LightPaper'),
     icon: 'FlashIcon',
-    href: '/',
+    href: 'https://docs.google.com/document/d/1c5eh__H3EXCgWT8nyJ_ttSO0wf7jMBmzSzZH1mS4_NA/edit?usp=sharing',
   },
   // {
   //   label: t('More'),

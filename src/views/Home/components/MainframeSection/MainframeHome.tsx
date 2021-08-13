@@ -22,9 +22,9 @@ const ImageSection = styled.div`
   }
   h2{
     font-size: 50px;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Conv_EarthsMightiestExpandItal-nqLO';
     letter-spacing: 2px;
-    text-shadow: 2px 2px #98FBF6;
+    text-shadow: 1px 1px #98FBF6;
   }
 `
 const CardsSection = styled.div`
