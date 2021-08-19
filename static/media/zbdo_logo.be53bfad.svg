@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="449" height="86" viewBox="0 0 449 86">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.403" cy="0.349" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f53cd2"/>
+      <stop offset="1" stop-color="#573e69"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.403" cy="0.349" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f785dd"/>
+    </radialGradient>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="449" height="86"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" clip-path="url(#clip-Custom_Size_1)">
+    <g id="Group_483" data-name="Group 483" transform="translate(-36 -20)">
+      <g id="Group_420" data-name="Group 420">
+        <g id="Group_464" data-name="Group 464">
+          <g id="Ellipse_362" data-name="Ellipse 362" transform="matrix(0.616, 0.788, -0.788, 0.616, 76.67, 26.619)" fill="none" stroke="#81ff63" stroke-width="5">
+            <ellipse cx="30.557" cy="30.557" rx="30.557" ry="30.557" stroke="none"/>
+            <ellipse cx="30.557" cy="30.557" rx="28.057" ry="28.057" fill="none"/>
+          </g>
+          <g id="Group_463" data-name="Group 463">
+            <g id="Group_386" data-name="Group 386" transform="translate(43.693 24.939)">
+              <g id="Ellipse_209" data-name="Ellipse 209" transform="translate(9.055)" fill="none" stroke="#f86399" stroke-width="5">
+                <ellipse cx="33.511" cy="33.511" rx="33.511" ry="33.511" stroke="none"/>
+                <ellipse cx="33.511" cy="33.511" rx="31.011" ry="31.011" fill="none"/>
+              </g>
+              <g id="Ellipse_232" data-name="Ellipse 232" transform="translate(0 0.356)" fill="none" stroke="#fdc363" stroke-width="5">
+                <ellipse cx="31.545" cy="31.545" rx="31.545" ry="31.545" stroke="none"/>
+                <ellipse cx="31.545" cy="31.545" rx="29.045" ry="29.045" fill="none"/>
+              </g>
+              <g id="Ellipse_208" data-name="Ellipse 208" transform="translate(9.42 11.917)" fill="none" stroke="#6c63ff" stroke-width="5">
+                <ellipse cx="31.545" cy="31.545" rx="31.545" ry="31.545" stroke="none"/>
+                <ellipse cx="31.545" cy="31.545" rx="29.045" ry="29.045" fill="none"/>
+              </g>
+              <path id="Path_962" data-name="Path 962" d="M28.529,0A28.529,28.529,0,1,1,0,28.529,28.529,28.529,0,0,1,28.529,0Z" transform="translate(6.664 8.267)" opacity="0.898" fill="url(#radial-gradient)"/>
+              <path id="Path_963" data-name="Path 963" d="M13.193,0A13.194,13.194,0,1,1,0,13.194,13.193,13.193,0,0,1,13.193,0Z" transform="translate(20.841 25.774)" opacity="0.822" fill="url(#radial-gradient-2)"/>
+            </g>
+          </g>
+        </g>
+        <text id="ZOOBDOO" transform="translate(141 72)" fill="#fff" font-size="35" font-family="Rams"><tspan x="0" y="0">Z</tspan><tspan y="0" font-size="27">O</tspan><tspan y="0" font-size="29">O</tspan><tspan y="0" font-size="34">B</tspan><tspan y="0">D</tspan><tspan y="0" font-size="27">O</tspan><tspan y="0" font-size="29">O</tspan></text>
+      </g>
+      <text id="Trade._Play._Earn." data-name="Trade. Play. Earn." transform="translate(395 67)" fill="#26d6ed" font-size="18" font-family="Rams-Bold, Rams" font-weight="700"><tspan x="-71.568" y="0">Trade. Play. Earn.</tspan></text>
+    </g>
+  </g>
+</svg>
