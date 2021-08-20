@@ -4,6 +4,7 @@ import { BoxProps, Box, Flex, FlexProps } from '@pancakeswap/uikit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'
+import BGLogo from '../../assets/mainframe/Zbdo_Mainframe_Staking.png'
 
 interface PageSectionProps extends BackgroundColorProps {
   svgFill?: string
@@ -28,7 +29,8 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   flex-direction: column;
   align-items: center;
   z-index: ${({ index }) => index - 1};
-  background: ${({ background, theme }) => background || theme.colors.background};
+  background: url(${BGLogo}) no-repeat;
+  background-position: 60% 50%;
   padding: ${({ getPadding }) => getPadding()};
 `
 

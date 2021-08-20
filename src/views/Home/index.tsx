@@ -32,7 +32,7 @@ const Home: React.FC = () => {
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%', minHeight: '780px' } }}
         index={2}
-        background={`url(${BGLogo}) fixed center`}
+        background=""
         hasCurvedDivider={false}
       >
         <MainframeSection />
