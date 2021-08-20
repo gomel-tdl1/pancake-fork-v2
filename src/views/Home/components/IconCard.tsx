@@ -24,9 +24,11 @@ const IconWrapper = styled(Box)<{ rotation?: string }>`
   }
 `
 
+// @ts-ignore
 interface IconCardProps extends IconCardData, CardProps {
   children: ReactNode
 }
+
 
 export interface IconCardData {
   icon: ReactNode

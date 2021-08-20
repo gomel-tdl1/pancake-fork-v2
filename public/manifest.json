@@ -12,12 +12,12 @@
     {
       "src": "favicon.ico",
       "type": "image/x-icon",
-      "sizes": "16x16"
+      "sizes": "256x256"
     },
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "16x16"
+      "sizes": "512x512"
     }
   ]
 }

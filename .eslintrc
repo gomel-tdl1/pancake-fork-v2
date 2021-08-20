@@ -13,7 +13,6 @@
   },
   "extends": "@pancakeswap/eslint-config-pancake",
   "rules": {
-    "no-shadow": "off",
     "no-console": ["warn", { "allow": ["info", "warn", "error", "debug"] }],
     "no-plusplus": 0,
     "prefer-destructuring": ["warn", { "object": true, "array": false }],
