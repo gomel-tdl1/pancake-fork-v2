@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.403" cy="0.349" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f53cd2"/>
+      <stop offset="1" stop-color="#573e69"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="0.403" cy="0.349" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#f785dd"/>
+    </radialGradient>
+    <clipPath id="clip-Custom_Size_2">
+      <rect width="100" height="100"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_2" data-name="Custom Size – 2" clip-path="url(#clip-Custom_Size_2)">
+    <g id="Group_483" data-name="Group 483" transform="translate(-40 -18)">
+      <g id="Group_420" data-name="Group 420" transform="translate(28.511 24.939)">
+        <g id="Group_464" data-name="Group 464">
+          <g id="Ellipse_362" data-name="Ellipse 362" transform="matrix(0.616, 0.788, -0.788, 0.616, 56.723, 1.978)" fill="none" stroke="#81ff63" stroke-width="5">
+            <ellipse cx="35.991" cy="35.991" rx="35.991" ry="35.991" stroke="none"/>
+            <ellipse cx="35.991" cy="35.991" rx="33.491" ry="33.491" fill="none"/>
+          </g>
+          <g id="Group_463" data-name="Group 463" transform="translate(17.882)">
+            <g id="Group_386" data-name="Group 386">
+              <g id="Ellipse_209" data-name="Ellipse 209" transform="translate(10.666)" fill="none" stroke="#f86399" stroke-width="5">
+                <ellipse cx="39.47" cy="39.471" rx="39.47" ry="39.471" stroke="none"/>
+                <ellipse cx="39.47" cy="39.471" rx="36.97" ry="36.971" fill="none"/>
+              </g>
+              <g id="Ellipse_232" data-name="Ellipse 232" transform="translate(0 0.419)" fill="none" stroke="#fdc363" stroke-width="5">
+                <ellipse cx="37.155" cy="37.155" rx="37.155" ry="37.155" stroke="none"/>
+                <ellipse cx="37.155" cy="37.155" rx="34.655" ry="34.655" fill="none"/>
+              </g>
+              <g id="Ellipse_208" data-name="Ellipse 208" transform="translate(11.095 14.036)" fill="none" stroke="#6c63ff" stroke-width="5">
+                <ellipse cx="37.155" cy="37.155" rx="37.155" ry="37.155" stroke="none"/>
+                <ellipse cx="37.155" cy="37.155" rx="34.655" ry="34.655" fill="none"/>
+              </g>
+              <path id="Path_962" data-name="Path 962" d="M33.6,0A33.6,33.6,0,1,1,0,33.6,33.6,33.6,0,0,1,33.6,0Z" transform="translate(7.849 9.738)" opacity="0.898" fill="url(#radial-gradient)"/>
+              <path id="Path_963" data-name="Path 963" d="M15.54,0A15.54,15.54,0,1,1,0,15.54,15.54,15.54,0,0,1,15.54,0Z" transform="translate(24.548 30.357)" opacity="0.822" fill="url(#radial-gradient-2)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

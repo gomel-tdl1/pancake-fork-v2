@@ -26,6 +26,7 @@ import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema, ViewMode } from './components/types'
+import BGLogo from '../../assets/mainframe/Zbdo_Mainframe_Staking.png'
 
 const ControlContainer = styled.div`
   display: flex;
@@ -94,8 +95,9 @@ const ViewControls = styled.div`
   }
 `
 
-const StyledBG = styled.div`
-  
+const FarmsWrapper = styled.div`
+  z-index: 5;
+  background: url(${BGLogo}) fixed center;
 `
 
 const NUMBER_OF_FARMS_VISIBLE = 12
@@ -265,7 +267,7 @@ const Farms: React.FC = () => {
     }
   }, [chosenFarmsMemoized, observerIsSet])
 
-  const rowData = chosenFarmsMemoized.map((farm) => {
+  let rowData = chosenFarmsMemoized.map((farm) => {
     const { token, quoteToken } = farm
     const tokenAddress = token.address
     const quoteTokenAddress = quoteToken.address
@@ -302,6 +304,9 @@ const Farms: React.FC = () => {
 
     return row
   })
+  if(!query){
+    rowData = rowData.filter(data => data.farm.pid === 441);
+  }
 
   const renderContent = (): JSX.Element => {
     if (viewMode === ViewMode.TABLE && rowData.length) {
@@ -332,7 +337,6 @@ const Farms: React.FC = () => {
 
       return <Table data={rowData} columns={columns} userDataReady={userDataReady} />
     }
-
     return (
       <FlexLayout>
         <Route exact path={`${path}`}>
@@ -380,22 +384,14 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
+    <FarmsWrapper>
       <PageHeader>
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-          {t('Farms')}
+          {t('Mainframe Farming')}
         </Heading>
         <Heading scale="lg" color="text">
           {t('Stake LP tokens to earn.')}
         </Heading>
-        <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Community Auctions')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
       </PageHeader>
       <Page>
         <ControlContainer>
@@ -450,7 +446,7 @@ const Farms: React.FC = () => {
         )}
         <div ref={loadMoreRef} />
       </Page>
-    </>
+    </FarmsWrapper>
   )
 }
 

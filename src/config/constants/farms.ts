@@ -16,6 +16,16 @@ const farms: FarmConfig[] = [
     quoteToken: tokens.wbnb,
   },
   {
+    pid: 441,
+    lpSymbol: 'ZBDO-BNB LP',
+    lpAddresses: {
+      97: '',
+      56: '0xAD52fEbea684EDB7325B3A97Dcaf09593De765f6',
+    },
+    token: tokens.zbdo,
+    quoteToken: tokens.wbnb,
+  },
+  {
     pid: 251,
     lpSymbol: 'CAKE-BNB LP',
     lpAddresses: {
