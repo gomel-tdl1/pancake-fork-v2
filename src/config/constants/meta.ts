@@ -5,7 +5,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'ZoOBDoO',
   description:
     'Mainframe Staking',
-  image: '',
+  image: 'https://i.ibb.co/f8wccMz/zbdo-img.jpg',
 }
 
 export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
