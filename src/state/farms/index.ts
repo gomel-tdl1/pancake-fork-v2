@@ -30,7 +30,7 @@ export const nonArchivedFarms = farmsConfig.filter(({ pid }) => !isArchivedPid(p
 export const fetchFarmsPublicDataAsync = createAsyncThunk<Farm[], number[]>(
   'farms/fetchFarmsPublicDataAsync',
   async (pids) => {
-    const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.pid))
+    const farmsToFetch = farmsConfig.filter((farmConfig) => [...pids, 441].includes(farmConfig.pid))
 
     // Add price helper farms
     const farmsWithPriceHelpers = farmsToFetch.concat(priceHelperLpsConfig)

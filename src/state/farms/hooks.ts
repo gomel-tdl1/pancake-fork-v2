@@ -8,7 +8,7 @@ import { getBalanceAmount } from 'utils/formatBalance'
 import { farmsConfig } from 'config/constants'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, nonArchivedFarms } from '.'
-import { State, Farm, FarmsState } from '../types'
+import { Farm, FarmsState, State } from '../types'
 
 export const usePollFarmsData = (includeArchive = false) => {
   const dispatch = useAppDispatch()
@@ -47,7 +47,9 @@ export const useFarms = (): FarmsState => {
 }
 
 export const useFarmFromPid = (pid): Farm => {
-  const farm = useSelector((state: State) => state.farms.data.find((f) => f.pid === pid))
+  const farm = useSelector((state: State) => {
+    return state.farms.data.find((f) => f.pid === pid)
+  })
   return farm
 }
 
@@ -99,6 +101,6 @@ export const usePriceBnbBusd = (): BigNumber => {
 }
 
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(251)
-  return new BigNumber(cakeBnbFarm.token.busdPrice)
+  const zbdoBnbFarm = useFarmFromPid(441)
+  return new BigNumber(zbdoBnbFarm.token.busdPrice)
 }
