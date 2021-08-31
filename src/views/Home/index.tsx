@@ -4,7 +4,6 @@ import PageSection from 'components/PageSection'
 import { useWeb3React } from '@web3-react/core'
 import useTheme from 'hooks/useTheme'
 import Container from 'components/Layout/Container'
-import BGLogo from '../../assets/mainframe/Zbdo_Mainframe_Staking.png'
 import MainframeSection from './components/MainframeSection/MainframeHome'
 
 const UserBannerWrapper = styled(Container)`
@@ -32,7 +31,7 @@ const Home: React.FC = () => {
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%', minHeight: '780px' } }}
         index={2}
-        background=""
+        background=''
         hasCurvedDivider={false}
       >
         <MainframeSection />

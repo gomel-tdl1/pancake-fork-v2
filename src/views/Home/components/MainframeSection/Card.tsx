@@ -59,6 +59,10 @@ const ButtonHome = styled(NavLink)`
   color: #98FBF6;
   font-size: 14px;
   letter-spacing: 1px;
+  :hover{
+    background-color: #33D488;
+    color: #ffffff;
+  }
 `
 
 type PropsType = {

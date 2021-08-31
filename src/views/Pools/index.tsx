@@ -75,7 +75,8 @@ const ControlStretch = styled(Flex)`
 `
 const StakingWrapper = styled.div`
   z-index: 5;
-  background: url(${BGLogo}) fixed center;
+  background: url(${BGLogo}) no-repeat fixed content-box ;
+  background-position: 650% 50%;
 `
 
 const NUMBER_OF_POOLS_VISIBLE = 12

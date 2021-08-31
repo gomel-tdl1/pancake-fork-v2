@@ -97,7 +97,8 @@ const ViewControls = styled.div`
 
 const FarmsWrapper = styled.div`
   z-index: 5;
-  background: url(${BGLogo}) fixed center;
+  background: url(${BGLogo}) no-repeat fixed content-box ;
+  background-position: 650% 50%;
 `
 
 const NUMBER_OF_FARMS_VISIBLE = 12

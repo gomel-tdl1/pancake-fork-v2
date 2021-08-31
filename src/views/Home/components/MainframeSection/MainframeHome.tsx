@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import MainframeTokenIcon from '../../../../assets/mainframe/zbdo_logo_token.svg'
 import CardMainframe from './Card'
-import StakeModal from '../../../Pools/components/PoolCard/Modals/StakeModal'
 
 const MainWrapper = styled.div`
   display: flex;
