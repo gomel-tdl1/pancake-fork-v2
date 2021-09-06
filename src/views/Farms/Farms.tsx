@@ -96,9 +96,22 @@ const ViewControls = styled.div`
 `
 
 const FarmsWrapper = styled.div`
-  z-index: 5;
-  background: url(${BGLogo}) no-repeat fixed content-box ;
-  background-position: 650% 50%;
+  position: relative;
+`
+const FarmBG = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(${BGLogo});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 `
 
 const NUMBER_OF_FARMS_VISIBLE = 12
@@ -386,6 +399,7 @@ const Farms: React.FC = () => {
 
   return (
     <FarmsWrapper>
+      <FarmBG />
       <PageHeader>
         <Heading as="h1" scale="xxl" color="secondary" mb="24px">
           {t('Mainframe Farming')}

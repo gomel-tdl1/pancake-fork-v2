@@ -75,8 +75,14 @@ const ControlStretch = styled(Flex)`
 `
 const StakingWrapper = styled.div`
   z-index: 5;
-  background: url(${BGLogo}) no-repeat fixed content-box ;
-  background-position: 650% 50%;
+  background-image: url(${BGLogo});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 `
 
 const NUMBER_OF_POOLS_VISIBLE = 12

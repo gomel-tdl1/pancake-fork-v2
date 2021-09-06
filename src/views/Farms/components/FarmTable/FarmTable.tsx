@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { useTable, Button, ChevronUpIcon, ColumnType } from '@pancakeswap/uikit'
+import { Button, ChevronUpIcon, ColumnType, useTable } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 
 import Row, { RowProps } from './Row'
@@ -15,7 +15,7 @@ export interface ITableProps {
 const Container = styled.div`
   filter: ${({ theme }) => theme.card.dropShadow};
   width: 100%;
-  background: rgba(8, 6, 11, 0.5);
+  background: rgba(8,6,11,0.5);
   border-radius: 16px;
   margin: 16px 0px;
 `
@@ -83,9 +83,9 @@ const FarmTable: React.FC<ITableProps> = (props) => {
           </StyledTable>
         </TableWrapper>
         <ScrollButtonContainer>
-          <Button variant="text" onClick={scrollToTop}>
+          <Button variant='text' onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="primary" />
+            <ChevronUpIcon color='primary' />
           </Button>
         </ScrollButtonContainer>
       </TableContainer>

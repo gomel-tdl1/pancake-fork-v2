@@ -25,6 +25,7 @@ import {
   getBunnySpecialPredictionContract,
   getFarmAuctionContract,
 } from 'utils/contractHelpers'
+import { getMulticallAddress } from 'utils/addressHelpers'
 
 // Imports below migrated from Exchange useContract.ts
 import { Contract } from '@ethersproject/contracts'
@@ -35,7 +36,7 @@ import ENS_ABI from '../config/abi/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
 import ERC20_ABI from '../config/abi/erc20.json'
 import WETH_ABI from '../config/abi/weth.json'
-import { MULTICALL_ABI, MULTICALL_NETWORKS } from '../config/constants/multicall'
+import multiCallAbi from '../config/abi/Multicall.json'
 import { getContract } from '../utils'
 
 /**
@@ -161,7 +162,7 @@ export const useFarmAuctionContract = () => {
   // Calls were failing if unconnected user goes to farm auction page
   // Using library instead of library.getSigner() fixes the problem for unconnected users
   // However, this fix is not ideal, it currently has following behavior:
-  // - If you visit Farm Auction page coming from some other page there are no errors in console (unconnceted or connected)
+  // - If you visit Farm Auction page coming from some other page there are no errors in console (unconnected or connected)
   // - If you go directly to Farm Auction page
   //   - as unconnected user you don't see any console errors
   //   - as connected user you see `unknown account #0 (operation="getAddress", code=UNSUPPORTED_OPERATION, ...` errors
@@ -225,6 +226,5 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 }
 
 export function useMulticallContract(): Contract | null {
-  const { chainId } = useActiveWeb3React()
-  return useContract(chainId && MULTICALL_NETWORKS[chainId], MULTICALL_ABI, false)
+  return useContract(getMulticallAddress(), multiCallAbi, false)
 }
